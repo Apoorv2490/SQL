@@ -1,0 +1,9 @@
+
+##QUERY 1
+select concat(name,"(",left(Occupation,1),")") from OCCUPATIONS order by name;
+
+##QUERY 2
+select concat("There are a total of ", occupation_count," ",lower(Occupation),"s.") as out_1 from (
+select Occupation,count(Occupation) as occupation_count from OCCUPATIONS
+group by Occupation) a
+order by occupation_count ASC, Occupation ASC;
