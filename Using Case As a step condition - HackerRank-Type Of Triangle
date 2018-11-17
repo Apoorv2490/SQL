@@ -1,0 +1,9 @@
+
+
+
+
+select case when A+B<=C or A+C<=B or B+C<=A then 'Not A Triangle' ####STEP1: The first step is check for triangle.
+            when A=B and B=C and C=A then 'Equilateral'  ##### STEP2: Check for the type of triangle.
+            when A!=B and B!=C and C!=A then 'Scalene'
+            when (A=B or B=C or A=C) and (A!=B or B!=C or A!=C) then 'Isosceles' end as triangle_type
+from TRIANGLES;
